@@ -32,6 +32,32 @@ docker compose up -d
 docker compose down
 docker compose up --scale <servicename>=2 -d
 
-minikube : 
-minikube start --driver=docker
-minikube status
+DEPLOYING AND SCALING APPLICATIONS USING MINIKUBE
+1.	Install Minikube
+2.	Set the environment variables
+3.	minikube start (minikube start --driver=docker)
+4.	docker login
+5.	Minikube status
+6.	kubectl create deployment mynginx --image=nginx
+7.	kubectl get deployments
+8.	kubectl describe pods
+9.	kubectl get pods
+10.	kubectl scale deployment mynginx –replicas=5    // scaling
+11.	kubectl get deployments
+12.	kubectl get pods (-A) //  we can see the 5 instance s of Mynginx
+
+
+13.	kubectl expose deployment mynginx --type=NodePort --port=80 --target-port=80                                       //  service mynginx is  exposed
+14.	kubectl port-forward svc/mynginx 8081:80   // forward the traffic from one port to onother i.e 8081 ( http://localhost:8081)
+15.	minikube dashboard
+16.	kubectl delete deployments mynginx
+17.	kubectl delete service mynginx 
+18.	minikube stop
+then for wordpress open localhost:8000 and setup wordpress
+docker compose down
+
+NAGIOS :
+docker pull jasonrivers/nagios:latest
+docker run --name nagiosdemo -p 8888:80 jasonrivers/nagios:latest
+go to localhost:8888, user - nagiosadmin, pass - nagios
+
