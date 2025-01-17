@@ -8,3 +8,30 @@ docker ps -a
 docker exec -it <containerID> bash
 docker stop <containerID>
 docker run -it ubuntu bash
+docker search ubuntu
+docker login
+docker start <containerID>
+
+Creating an image:
+first create a js where you write -
+console.log("Docker img using Dockerfile")
+then in the Dockerfile write -
+FROM node:alpine
+WORKDIR /app
+COPY . /app
+CMD ["node", "app.js"]
+docker build -t myimage
+docker images
+then go to docker destop search the image and run, you should see output
+docker tag myimage <yourDockerName>/myimage
+docker push <yourDockerName>/myimage
+
+docker compose :
+open a folder, then create a docker-compose.yml file in Vs code
+docker compose up -d
+docker compose down
+docker compose up --scale <servicename>=2 -d
+
+minikube : 
+minikube start --driver=docker
+minikube status
