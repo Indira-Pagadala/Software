@@ -1,0 +1,10 @@
+ssh-keygen -t rsa
+ls
+cat sshkey.pub
+create key in github
+eval "$(ssh-agent -s)"
+ssh-add "path/sskkey"
+ssh-add -l
+ssh -T git@github.com
+anthe
+after that git clone and git pull origin main
