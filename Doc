@@ -1,0 +1,10 @@
+Docker cli:
+docker -v
+docker run hello-world
+docker images
+docker pull ubuntu
+docker run -it -d ubuntu
+docker ps -a
+docker exec -it <containerID> bash
+docker stop <containerID>
+docker run -it ubuntu bash
